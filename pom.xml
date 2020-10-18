@@ -6,11 +6,54 @@
 
   <groupId>de.desertfox</groupId>
   <artifactId>random</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <lorem.ipsum.version>1.0</lorem.ipsum.version>
+    <mockito.version>1.10.19</mockito.version>
   </properties>
+
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Dustin Donges</name>
+      <email>info@fox-dev.net</email>
+    </developer>
+  </developers>
+
+  <dependencies>
+    <dependency>
+      <groupId>de.sven-jacobs</groupId>
+      <artifactId>loremipsum</artifactId>
+      <version>${lorem.ipsum.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <scm>
+    <connection>scm:git:git://github.com/desertfox94/random.git</connection>
+    <developerConnection>scm:git:ssh://github.com:desertfox94/random.git</developerConnection>
+    <url>http://github.com/desertfox94/random/tree/main</url>
+  </scm>
 
 </project>

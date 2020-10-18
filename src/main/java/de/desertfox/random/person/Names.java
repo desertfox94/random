@@ -1,4 +1,4 @@
-package de.desertfox.random.names;
+package de.desertfox.random.person;
 
 import de.desertfox.random.RandomStrings;
 
@@ -18,48 +18,57 @@ public class Names {
 
 	private static final String FORMAT = "%s %s";
 
-	public static String surName() {
+	private static Names instance;
+
+	public static Names getInstance() {
+		if (instance == null) {
+			instance = new Names();
+		}
+		return instance;
+	}
+
+	public String surName() {
 		if (surNames == null) {
 			surNames = load("sur_name.txt");
 		}
 		return randomOf(surNames);
 	}
 
-	public static String firstName() {
+	public String foreName() {
 		return bool() ? femaleName() : maleName();
 	}
 
-	public static String femaleName() {
+	public String femaleName() {
 		if (femaleNames == null) {
 			femaleNames = load("female.txt");
 		}
 		return randomOf(femaleNames);
 	}
 
-	public static String maleName() {
+	public String maleName() {
 		if (maleNames == null) {
 			maleNames = load("male.txt");
 		}
 		return randomOf(maleNames);
 	}
 
-	public static String fullName() {
-		return format(firstName(), surName());
+	public String fullName() {
+		return format(foreName(), surName());
 	}
 
-	public static String fullFemaleName() {
+	public String fullFemaleName() {
 		return format(femaleName(), surName());
 	}
 
-	public static String fullMaleName() {
+	public String fullMaleName() {
 		return format(maleName(), surName());
 	}
 
-	public static String userName() {
+	public String userName() {
 		return (RandomStrings.alpha(1).toLowerCase() + surName()).toLowerCase();
 	}
 
-	private static String format(String firstName, String lastName) {
+	private String format(String firstName, String lastName) {
 		return String.format(FORMAT, firstName, lastName);
 	}
 

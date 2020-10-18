@@ -1,4 +1,4 @@
-package de.desertfox.random.user;
+package de.desertfox.random.person;
 
 public class DummyUser {
 

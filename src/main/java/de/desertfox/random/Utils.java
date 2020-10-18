@@ -1,6 +1,6 @@
 package de.desertfox.random;
 
-import de.desertfox.random.names.Names;
+import de.desertfox.random.person.Names;
 
 import java.io.File;
 import java.io.IOException;

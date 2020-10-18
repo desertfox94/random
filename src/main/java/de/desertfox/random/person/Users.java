@@ -1,13 +1,13 @@
-package de.desertfox.random.user;
+package de.desertfox.random.person;
 
 import de.desertfox.random.Email;
-import de.desertfox.random.names.Names;
 
 public class Users {
 
 	public static DummyUser random() {
-		String firstName = Names.firstName();
-		String lastName = Names.surName();
+		Names names = Names.getInstance();
+		String firstName = names.foreName();
+		String lastName = names.surName();
 		String username = (firstName.charAt(0) + lastName).toLowerCase();
 		String email = Email.of(firstName, lastName);
 		return new DummyUser(username, firstName, lastName, email);
