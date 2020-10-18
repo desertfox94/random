@@ -33,7 +33,7 @@ public final class RandomStrings {
 
 	public static String create(char[] chars, int length) {
 		char[] result = new char[length];
-		for (int i = 0; i <= length; i++) {
+		for (int i = 0; i < length; i++) {
 			result[i] = Collections.randomOf(chars);
 		}
 		return new String(result);
